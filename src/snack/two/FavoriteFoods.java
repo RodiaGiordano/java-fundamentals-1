@@ -1,8 +1,5 @@
 package snack.two;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class FavoriteFoods {
     public static void main(String[] args){
         String[] foods = {"pasta", "pizza","verdura", "carne", "pesce", "frutta", "cinese"};
