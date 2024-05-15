@@ -1,20 +1,9 @@
 package snack.bonus2;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Bonus2 {
-    public static void main(String[] args){
-
-        /*
-        Data una stringa e un carattere scelto dall'utente, calcolare la
-        lunghezza della sequenza più lunga di quel carattere all'interno della
-        stringa. Stampare sia la lunghezza trovata, che la posizione (l'indice
-        del primo carattere della sequenza) all'interno della stringa.
-        ESEMPIO:
-        stringa: aaabaabbbbaaaabab  carattere: 'a'    lunghezza massima: 4  indice: 10
-        Se esistono due sequenze con la stessa lunghezza massima, restituire i dati relativi all'ultima all'interno della stringa (quella con indice di inizio più alto)
-         */
+    public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -24,7 +13,7 @@ public class Bonus2 {
         char character = characterUser.charAt(0);
 
         // System.out.println(character);
-        String stringToCheck = "aaabaabbbbaaccccccaabab";
+        String stringToCheck = "aaabbbsssfnncwiwiaa";
 
         String sequence = "";
 
@@ -32,22 +21,22 @@ public class Bonus2 {
 
         int index = 0;
 
-       for(int i = 0; i < stringToCheck.length(); i++){
-            if(character == (stringToCheck.charAt(i))) {
+        for (int i = 0; i < stringToCheck.length(); i++) {
+
+            if (character == stringToCheck.charAt(i)) {
                 sequence += character;
-
-            }else{
-                if(sequence.length() > longerSequence.length()){
+                if(sequence.length() > longerSequence.length()) {
                     longerSequence = sequence;
-                    index = i - (longerSequence.length());
+                    index = i - longerSequence.length() +1;
+                }else if(sequence.length() == longerSequence.length()){
+                    index = i - longerSequence.length() +1;
                 }
-            sequence = "";
+            }else{
+                sequence = "";
             }
-
         }
-
-            System.out.println(longerSequence.length());
-            System.out.println(index);
+        System.out.println(longerSequence);
+        System.out.println(index);
     }
 }
 
