@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class TickectTrain {
     public static void main(String[] args){
 
-        Scanner scanner = new Scanner(System.in);
+      /*  Scanner scanner = new Scanner(System.in);
 
         System.out.println("Quanti chilometri vuoi percorrere?");
-        int kilometres = Integer.parseInt(scanner.nextLine());
+        float kilometres = Integer.parseInt(scanner.nextLine());
         System.out.println("Quanti anni hai?");
-        int userAge = Integer.parseInt(scanner.nextLine());
+        byte userAge = (byte) Integer.parseInt(scanner.nextLine());
 
         float ticketPrice = kilometres * 0.21F;
 
@@ -26,6 +26,27 @@ public class TickectTrain {
         }
 
         System.out.println(finalPrice);
+    */
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Quanti chilometri vuoi percorrere?");
+
+        float kilometres = Float.parseFloat(scanner.nextLine());
+        System.out.println("Quanti anni hai?");
+        byte userAge = (byte) Integer.parseInt(scanner.nextLine());
+
+        float ticketPrice = kilometres * 0.21F;
+
+        float discount = 1F;
+
+        if(userAge < 18){
+            discount = 0.80F;
+        }else if (userAge > 64){
+            discount = 0.60F;
+        }
+
+        float finalPrice = ticketPrice * discount;
+        System.out.println(discount);
+        // provare a troncare dopo la seconda decimale
     }
 }
