@@ -1,4 +1,4 @@
-package snack.three;
+package snack.bonus;
 
 import java.util.Scanner;
 
