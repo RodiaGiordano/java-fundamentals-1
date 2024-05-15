@@ -46,7 +46,7 @@ public class TickectTrain {
         }
 
         float finalPrice = ticketPrice * discount;
-        System.out.println(discount);
+        System.out.println(finalPrice);
         // provare a troncare dopo la seconda decimale
     }
 }
